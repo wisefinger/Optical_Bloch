@@ -1,0 +1,54 @@
+% simple illustration
+format long e
+c = 299792458;
+h_bar = 6,626 * 10^-34;
+lambda12 = 393 *10^-9; %nm
+w12 = c/lambda12;
+lambda23 = 397 * 10^-9;
+w23 = c/lambda23;
+
+d12 = 1 + i;
+d13 = 1 + 2i; 
+d23 = 2 + i;
+
+E1 = 2;
+E2 = 3;
+
+% Hamiltonian
+
+H = [0 -d12*E1 0; -conj(d12)*E1 h_bar*w12 -d23*E2; 0 -conj(d23)*E2 h_bar*w23]
+
+
+%% STEADY STATE USING MATRIX INVERSION
+
+% because the system is overdetermened we replace the first row of the
+% matrix by sum x_i = 1 or in other words a 1 row. The system changes from
+% HX = 0 to H'X = V with V the unit matrix
+d = size(H);
+
+H(1,:) = ones(1,d(1));
+V = eye(d(1));
+
+% could change here 0's to O values functions (in this example not a
+% problem because not that much 0's
+
+% we try the 3 different methods to solve this:
+
+
+%%  QUASI-MINIMAL RESIDUAL METHOD (QMR)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
